@@ -65,9 +65,28 @@ namespace _16ex.Repositories.UnderRep
 
         private static void T221()
         {
-            SqlCommand command = new SqlCommand("sp_221", sqlconnection);
+            SqlCommand command = new SqlCommand("221", sqlconnection);
 
             command.CommandType = System.Data.CommandType.StoredProcedure;
+
+            string name = Console.ReadLine();
+            SqlParameter nameParam = new SqlParameter
+            {
+                ParameterName = "@name",
+                Value = name
+            };
+
+            command.Parameters.Add(nameParam);
+
+            name = Console.ReadLine();
+            SqlParameter nameParam2 = new SqlParameter
+            {
+                ParameterName = "@country",
+                Value = name
+            };
+
+            command.Parameters.Add(nameParam2);
+            Console.WriteLine();
 
             ForSecPart(command);
 

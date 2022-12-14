@@ -56,8 +56,6 @@ namespace _16ex.Repositories.UnderRep
             Console.WriteLine("\n\nT213\n");
             T213();
 
-            Console.WriteLine("\n\nT222\n");
-            T222();
 
 
             Console.WriteLine("\n\nT224\n");
@@ -168,26 +166,6 @@ namespace _16ex.Repositories.UnderRep
             SqlCommand command = new SqlCommand("sp_213", sqlconnection);
 
             command.CommandType = System.Data.CommandType.StoredProcedure;
-
-            ForSecPart(command);
-
-        }
-
-
-        private static void T222()
-        {
-            SqlCommand command = new SqlCommand("sp_222", sqlconnection);
-
-            command.CommandType = System.Data.CommandType.StoredProcedure;
-            
-            string country=Console.ReadLine();
-            SqlParameter nameParam = new SqlParameter
-            {
-                ParameterName = "@country",
-                Value = country
-            };
-
-            command.Parameters.Add(nameParam);
 
             ForSecPart(command);
 
